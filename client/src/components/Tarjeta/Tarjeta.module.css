@@ -1,0 +1,22 @@
+.tarjeta{
+    border: 10px solid black;
+    border-radius: 5%;
+  
+    padding: 10px;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin: 5px;
+    max-width: 15%;
+    max-height: 15%;
+
+}
+.name {
+    font-size: 30px;
+    text-align: center;
+}
+
+.image {
+    border: 1px solid rgb(15, 14, 14);
+    max-width: 100%;
+    max-height: 100%;
+}

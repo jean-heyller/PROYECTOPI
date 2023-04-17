@@ -1,0 +1,13 @@
+.Tarjetas {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 10px;
+    margin: 5px;
+}
+.filter{
+    margin: 10px;
+}
+.button{
+    
+}
