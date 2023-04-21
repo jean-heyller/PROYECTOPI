@@ -1,32 +1,27 @@
 import './App.css';
+import {useLocation,Route,Routes,useNavigate,Router} from 'react-router-dom';
+
+import Tarjetas from './components/Tarjetas/Tarjetas';
+
+import Detail from './components/Detail/Detail';
+import LadingPage from './components/Ladingpage/LadingPage';
+import Nav from './components/Nav/Nav';
 import Form from './components/Form/Form';
 
 
-import Tarjetas from './components/Tarjetas/Tarjetas';
-const dog = [{
-  image: "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg",
-  name: "Affenpinscher",
-  temperament: "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving",
-  weigth:  "9 - 11.5"
-},
-{
-  image: "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg",
-  name: "Affenpinscher",
-  temperament: "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving",
-  weigth:  "9 - 11.5"
-},
-{
-  image: "https://cdn2.thedogapi.com/images/hMyT4CDXR.jpg",
-  name: "Affenpinscher",
-  temperament: "Stubborn, Curious, Playful, Adventurous, Active, Fun-loving",
-  weigth:  "9 - 11.5"
-}    
-]
 function App() {
+  
+  const { pathname } = useLocation();
   return (
+    
     <div className="App">
-      <h1>Henry Dogs</h1>
-      < Tarjetas dogs={dog}></Tarjetas>
+      {pathname !=="/"  && <Nav/>}
+      <Routes>
+        <Route path="/" element={<LadingPage/>}></Route>
+        <Route path="/home" element={<Tarjetas/>}></Route>
+        <Route path="/detail/:detailId" element={<Detail/>}></Route>
+        <Route path='/foRM' element={<Form></Form>}></Route>
+      </Routes>
     </div>
   );
 }
