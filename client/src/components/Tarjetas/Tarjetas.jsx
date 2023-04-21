@@ -48,13 +48,13 @@ export default function Tarjetas() {
         </select>
         </div>
         </div>
-        {dogs.map(({ image, name, temperament, weigth, id }) => {
+        {dogs.map(({ image, name, temperament, weight, id }) => {
           return (
             <Tarjeta
               id={id}
               name={name}
               temperament={temperament}
-              weigth={weigth}
+              weight={weight}
               image={image}
             />
           );

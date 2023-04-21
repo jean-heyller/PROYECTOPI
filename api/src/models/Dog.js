@@ -10,8 +10,8 @@ module.exports = (sequelize) => {
       primaryKey:true
     },
     image: {
-      type: DataTypes.STRING,
-      allowNull:false
+      type: DataTypes.JSON,
+      allowNull:true
     },
     name: {
       type: DataTypes.STRING,
@@ -27,6 +27,14 @@ module.exports = (sequelize) => {
       allowNull:false,
     },
     life_span: {
+      type: DataTypes.STRING,
+      allowNull:false
+    },
+    origin: {
+      type: DataTypes.ENUM("Db"),
+      defaultValue: "Db",
+    },
+    temperament:{
       type: DataTypes.STRING,
       allowNull:false
     }

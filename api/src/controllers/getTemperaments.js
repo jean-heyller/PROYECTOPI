@@ -10,17 +10,22 @@ const getTemperaments = async (req,res) =>{
         const Temperaments = breeds.map((animal)=>{
             return animal.temperament
         })
-        const objects = Temperaments.map((temp)=>{
-            return {
-                name : temp
-            };
+        const temperamentArray = [];
+
+        Temperaments.forEach((str) => {
+        if (str) { // verifica si str es nulo o indefinido
+        const arr = str.split(",").map((item) => ({ name: item.trim() }));
+        temperamentArray.push(...arr);
+        }
         });
-        const filterd = objects.filter((data)=>{
-            return data.name !== undefined
-        })
-        Temperament.bulkCreate(filterd)
-        if(filterd.length>0){
-            res.status(201).json({msg:"Temperament guardados con exito"});
+        const uniqueArr = temperamentArray.filter((elem, index, self) =>
+        index === self.findIndex((t) => t.name === elem.name)
+        );
+
+        const result = uniqueArr.map(({ name }) => ({ name }));
+        Temperament.bulkCreate(result)
+        if(result.length>0){
+            res.status(201).json({msg:"Temperamentos obetenidos"});
         }
     }catch (error) {
         return res.status(500).json({ err: error.message });

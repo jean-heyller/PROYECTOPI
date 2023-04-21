@@ -1,12 +1,12 @@
 require("dotenv").config;
-const {API_KEY,API_URL} = process.env;
+const {API_KEY,API_URL,API_ID} = process.env;
 const {Dog} = require("../db");
 const axios = require('axios');
 const getDogsByraza = async (req,res)=>{
     try {
             const {id} = req.params;
             const response = await axios
-            .get(`${API_URL}/${id}?api_key=${API_KEY}`);
+            .get(`${API_ID}/${id}?api_key=${API_KEY}`);
             const breed = response.data
             if(Object.keys(breed).length !== 0){
                 return res.status(201).json(breed);
