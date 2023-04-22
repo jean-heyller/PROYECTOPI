@@ -1,12 +1,21 @@
 import Tarjeta from "../Tarjeta/Tarjeta";
 import style from '../Tarjetas/Tarjetas.module.css';
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { get_dogs_api, order_dogs, filter_dogs_origin,filter_temp } from "../../Redux/actions";
+import { get_dogs_api, order_dogs, filter_dogs_origin,filter_temp,get_dog_name } from "../../Redux/actions";
 
 
 export default function Tarjetas() {
+  const [name, setName] = useState("");
+    const handleChange = (event) => {
+    setName(event.target.value);
+    };
+
+  const onSearch = (name) =>{
+    console.log(name)
+      dispatch(get_dog_name(name))
+  }  
   const dispatch = useDispatch();
   const dogs = useSelector((state) => state.dogsFilter);
 
@@ -28,26 +37,28 @@ export default function Tarjetas() {
   }
   return (
     <div>
+        <input
+        type="search"
+        className={style.searchInput}
+        onChange={handleChange}
+        />
+        <button className={style.searchButton} onClick={() => onSearch(name)}>
+        </button>
+      <select className={style.select}  name="filtrar" onChange={filtrar}>
+      <option className={style.option}  value="Api">Api</option>
+      <option value="Db">Database</option>
+      </select>
+      <select name="filtrar" onChange={ordenar}>
+      <option value="alfabeticamente">alfabeticamente</option>
+      <option value="Peso">Peso</option>
+      </select>
+      <select name="filtrar" onChange={filtrat_temp}>
+      <option value="tempermanetos"></option>
+      <option value="Loving">Loving</option>
+      <option value="Trainable">Trainable</option>
+      <option value="Dutiful">Dutiful</option>
+      </select>
       <div className={style.Tarjetas}>
-        <div>
-        <button></button>
-        <select name="filtrar" onChange={filtrar}>
-        <option value="Api">Api</option>
-        <option value="Db">Database</option>
-        </select>
-        <div>
-        <select name="filtrar" onChange={ordenar}>
-        <option value="alfabeticamente">alfabeticamente</option>
-        <option value="Peso">Peso</option>
-        </select>
-        <select name="filtrar" onChange={filtrat_temp}>
-        <option value="tempermanetos"></option>
-        <option value="Loving">Loving</option>
-        <option value="Trainable">Trainable</option>
-        <option value="Dutiful">Dutiful</option>
-        </select>
-        </div>
-        </div>
         {dogs.map(({ image, name, temperament, weight, id }) => {
           return (
             <Tarjeta

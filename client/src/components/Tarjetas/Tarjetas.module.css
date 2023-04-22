@@ -1,13 +1,64 @@
 .Tarjetas {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: flex-start;
+    width: 100%;
+    padding-bottom: 50px;
+    border: 30px;
+   /* altura fija */
+  /*  overflow: scroll */
+  
+}
+
+.contenedor {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    padding: 10px;
-    margin: 5px;
 }
 .filter{
     margin: 10px;
 }
-.button{
-    
+.searchInput{
+    border: 0px;
+    border-radius: 15px 0px 0px 15px;
+    background-color: #e0e0e0;
+    height: 3em;
+    text-align: right;
+  float: right;
+  width: 100%;
+
+}
+
+.searchButton{
+    border: 0px;
+    border-radius:0px 15px 15px 0px;
+    background-color: #e0e0e0;
+    height: 3em;
+}
+
+.bar{
+    width: 15%;
+   
+}
+.option {
+    justify-content: center;
+    margin-top: 10px; 
+}
+.searchButton{
+    font-size: 12px;
+  padding: 11px 10px;
+  
+}
+.searchInput {
+
+    background-color: #24303c;
+
+    border-radius: 10px;
+
+    margin-top: 10px;
+
+    color: #fff;
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 200px;
+
 }
