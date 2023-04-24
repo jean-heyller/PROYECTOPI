@@ -8,7 +8,7 @@ export default function Nav() {
 const dispatch = useDispatch();
 
 return (
-    <div>
+    <div className={style.nav}>
     <SearchBar></SearchBar>
     <Link to="/form">FORM</Link>
     </div>
