@@ -1,38 +1,48 @@
 .Tarjetas {
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: flex-start;
-    width: 100%;
-    padding-bottom: 50px;
+    width: 100%; 
+    height: 10%;
     border: 30px;
-   /* altura fija */
-  /*  overflow: scroll */
-  
+    margin-top: 100px;
+    height: 200px;
+}
+.clean {
+    border: 0px;
+    border-radius:15px 15px 15px 15px;
+    background-color: #a75b5b;
+    position: absolute;
+    left: 200px;
+    top: 13px;
+    font-size: 12px;
+   padding: 11px 40px;
+   margin-top: 110px;
 }
 
-.contenedor {
-    display: flex;
-    flex-direction: row;
-}
 .filter{
     margin: 10px;
 }
 .searchInput{
-    border: 0px;
-    border-radius: 15px 0px 0px 15px;
-    background-color: #e0e0e0;
-    height: 3em;
-    text-align: right;
-  float: right;
-  width: 100%;
+    position: absolute;
+    right: 200px;
+
+    margin-top: 100px;
 
 }
 
 .searchButton{
     border: 0px;
     border-radius:0px 15px 15px 0px;
-    background-color: #e0e0e0;
-    height: 3em;
+    background-color: #a75b5b;
+    position: absolute;
+    right: 200px;
+    top: 10px;
+    margin-top: 179px;
+    font-size: 12px;
+   padding: 11px 10px;
+   font-size: 12px;
+   padding: 11px 40px;
+  
 }
 
 .bar{
@@ -43,11 +53,8 @@
     justify-content: center;
     margin-top: 10px; 
 }
-.searchButton{
-    font-size: 12px;
-  padding: 11px 10px;
-  
-}
+
+
 .searchInput {
 
     background-color: #24303c;
@@ -61,4 +68,8 @@
     padding: 5px 10px;
     width: 200px;
 
+}
+.selects {
+    margin-top: 100px;
+  
 }
