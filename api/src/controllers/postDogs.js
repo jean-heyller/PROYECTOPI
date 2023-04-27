@@ -3,20 +3,21 @@ const { Op } = require('sequelize');
 
 const postDog = async (req, res) => {
     try {
-        const { height, name, weight, life_span, temperament,image } = req.body;
-        if (!height || !name || !weight || !life_span || !temperament) {
-            return res.status(400).json({ msg: "Faltan datos" });
-        }
+        const { height, weight_min,name,height_max,height_min, weight_max,life_span, temperament,image } = req.body;
         const temp = temperament.join(" ")
         const newDog = await Dog.create({
             name: name,
-            height: height,
+            height: {
+                imperial:`${height_min}/${height_max}`
+            },
             weight: {
-                imperial:weight.imperial
+                imperial:`${weight_min}-${weight_max}`
             },
             life_span: life_span,
             temperament: temp,
-            image: image
+            image: {
+                url:image
+            }
              // Agregar la propiedad "temperament" con los valores seleccionados
           });
           const idTemp =  await Temperament.findAll({
@@ -29,10 +30,10 @@ const postDog = async (req, res) => {
           })
           console.log(idTemp)
         await newDog.addTemperaments(idTemp);
-        return res.status(201).json({msg:"perro guardado con exito"});
+        return res.status(201).json({msg:"dog saved successfully"});
     } catch (error) {
         console.error(error);
-        return res.status(500).json({msg:error.message});
+        return res.status(500).json({msg:"internal server error"});
     }
 };
 module.exports = postDog;
