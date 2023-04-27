@@ -10,8 +10,12 @@ form {
     position: relative;
     margin-bottom: 20px;
     border-radius: 30px;
-    color: #9c2626;
+    color: #1b1818;
+  
   }
+.errors {
+  color: #7c1e1e;
+}
   header{
     position:fixed;
     top: 0;

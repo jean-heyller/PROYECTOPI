@@ -74,37 +74,37 @@ export default function Form(){
                 <div>
                     <label className={style.label} htmlFor="name">name</label>
                     <input  className={style.input}onChange={handleInputChange} value={dog.name} type="text" name="name"></input>
-                    {errors.name? <span className="error">{errors.name}</span>:null}
+                    {errors.name? <span className={style.errors}>{errors.name}</span>:null}
                 </div>
                 <div>
                     <label className={style.label} htmlFor="height_max">height_max</label>
                     <input className={style.input} onChange={handleInputChange} value={dog.height_max} type="number" name="height_max"></input>
-                    {errors.height_max? <span className="error">{errors.height_max}</span>:null}
+                    {errors.height_max? <span className={style.errors}>{errors.height_max}</span>:null}
                 </div>
                 <div>
                     <label className={style.label} htmlFor="height_min">height_min</label>
                     <input className={style.input}onChange={handleInputChange} value={dog.height_min} type="number" name="height_min"></input>
-                    {errors.height_min? <span className="error">{errors.height_min}</span>:null}
+                    {errors.height_min? <span className={style.errors}>{errors.height_min}</span>:null}
                 </div>
                 <div>
                     <label className={style.label} htmlFor="weight_max">weight_max</label>
                     <input className={style.input}onChange={handleInputChange} value={dog.weight_max} type="number" name="weight_max"></input>
-                    {errors.weight_max? <span className="error">{errors.weight_max}</span>:null}
+                    {errors.weight_max? <span className={style.errors}>{errors.weight_max}</span>:null}
                 </div>
                 <div>
                     <label className={style.label} htmlFor="weight_min">weight_min</label>
                     <input className={style.input} onChange={handleInputChange} value={dog.weight_min} type="number" name="weight_min"></input>
-                    {errors.weight_min? <span className="error">{errors.weight_min}</span>:null}
+                    {errors.weight_min? <span className={style.errors}>{errors.weight_min}</span>:null}
                 </div>
                 <div>
                     <label className={style.label} htmlFor="life_span">life_span</label>
                     <input  className={style.input}onChange={handleInputChange} value={dog.life_span} type="text" name="life_span"></input>
-                    {errors.life_span? <span className="error">{errors.life_span}</span>:null}
+                    {errors.life_span? <span className={style.errors}>{errors.life_span}</span>:null}
                 </div>
                 <div>
                     <label className={style.label} htmlFor="image">image</label>
                     <input  className={style.input}onChange={handleInputChange} value={dog.image} type="text" name="image"></input>
-                    {errors.image? <span className="error">{errors.image}</span>:null}
+                    {errors.image? <span className={style.errors}>{errors.image}</span>:null}
                 </div>
                 <div>
                 <label className={style.temperament} htmlFor="temperament">
@@ -112,7 +112,7 @@ export default function Form(){
                 </label>
                 </div>
                 <button className ={style.btn}type="submit">ENVIAR</button>
-                {errors.temperament? <span className="error">{errors.temperament}fsf</span>:null}
+                {errors.temperament? <span className={style.errors}>{errors.temperament}fsf</span>:null}
                 <div>
                 <select
                 className={style.temperaments}

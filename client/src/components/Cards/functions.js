@@ -26,7 +26,7 @@ export const useFilters = () => {
 
     const onSearch = (name) =>{
         const dogFind = dogs.filter((dog)=> {
-        return dog.name===name
+        return dog.name.toLowerCase()===name.toLowerCase()
         })
         if(dogFind.length===0) {
         window.alert("no hay razas con ese nombre ")
