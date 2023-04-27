@@ -1,0 +1,50 @@
+.clean {
+    background-color: #a75b5b;
+    border: 0px;
+    border-radius:15px 15px 15px 15px;
+    font-size: 12px;
+    left: 200px;
+    margin-top: 39px;
+    left: 60px;
+    padding: 11px 40px;
+    position: absolute;
+    top: 13px;
+}
+
+.filter{
+    margin: 5px;
+}
+
+.option {
+    justify-content: center;
+    margin-top: 10px;
+    }
+
+.searchButton{
+    background-color: #a75b5b;
+    border: 0px;
+    border-radius:15px 15px 15px 15px;
+    font-size: 12px;
+    margin-top: 39px;
+    padding: 11px 40px;
+    position: absolute;
+    right: 60px;
+    top: 10px;
+}
+
+.searchInput {
+    background-color: #24303c;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 1.5px;
+    padding: 11px 40px;
+    position: absolute;
+    right: 180px;
+    width: 200px;
+}
+
+.selects {
+    margin-top: 8px;
+}
+

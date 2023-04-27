@@ -28,9 +28,9 @@ const postDog = async (req, res) => {
                 }
             }
           })
-          console.log(idTemp)
+          console.log(newDog)
         await newDog.addTemperaments(idTemp);
-        return res.status(201).json({msg:"dog saved successfully"});
+        return res.status(201).json(newDog);
     } catch (error) {
         console.error(error);
         return res.status(500).json({msg:"internal server error"});

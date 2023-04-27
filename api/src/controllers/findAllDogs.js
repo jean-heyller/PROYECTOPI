@@ -22,10 +22,10 @@ const findAllDogs = async (req,res)=>{
         const  dogsApi = response.data 
 
         // Combinamos los perros de la base de datos y los perros de la API en una sola lista
-        const allDogs = [...dogsDb,...dogsApi]
+       /*  const allDogs = [...dogsDb,...dogsApi] */
 
         // Devolvemos el array con todos los  perros 
-        return res.status(201).json(allDogs);
+        return res.status(201).json({dogsDb :dogsDb,dogsApi:dogsApi});
     }catch (error){
         
         return res.status(500).json({ msg : "error con el servidor"})

@@ -1,16 +1,16 @@
 import style from "./Nav.module.css";
-import SearchBar from "../SearchBar/SearchBar";
+
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { filter_dogs } from "../../Redux/actions";
+
 
 export default function Nav() {
-const dispatch = useDispatch();
+
 
 return (
     <div className={style.nav}>
-    <SearchBar></SearchBar>
-    <Link to="/form">FORM</Link>
+    <Link to="/"><a className={style.titule}>Home</a></Link>
+    <Link to="/form"><a className={style.titule}>Form</a></Link>
+    <Link to="/home"><a className={style.titule}>Tarjetas</a></Link>
     </div>
 );
 }

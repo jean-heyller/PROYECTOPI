@@ -1,0 +1,9 @@
+.div {
+    display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.active {
+  background-color: #a75b5b;
+  color: rgb(17, 15, 15);
+}

@@ -1,24 +1,25 @@
 import useDog from "../../Hooks/UseDogs";
-
+import style from "./Detail.module.css"
 
 
 const Detail = () =>{
-   
     const dog = useDog();
- 
     return(
-        <div>
+        <div  className={style.container}>
             {dog ? (
             <>
             <h2>{dog.name}</h2>
-            <p>{dog.bred_for}</p>
-            <p>{dog.breed_group}</p>
-            <p>{dog.temperament}</p>
-            <p>{dog.origin}</p>
+            <p>Id: {dog.id}</p>
+            <p>Height-imperial:{dog.height.imperial}</p>
+            <p>Life span :{dog.life_span}</p>
+            <p>Temperaments :{dog.temperament}</p>
+            <p>Origin:{dog.origin}</p>
+            <p>weight-imperial: {dog.weight.imperial}</p>
+            <img className={style.image} src={dog.image.url}></img>
             </>
             ) : (
                 <h3>Loading...</h3>
-            )}
+            )};
         </div>
     );  
 };
